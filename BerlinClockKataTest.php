@@ -7,13 +7,20 @@ use PHPUnit\Framework\TestCase;
 
 class BerlinClockKataTest extends TestCase
 {
-    public function test (){
 
-        $myclass = new BerlinClockKata();
+    private $berlinClock;
 
-        $actual = $myclass->testMethod(1);
-
-        assertEquals(1, $actual);
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->berlinClock = new BerlinClockKata();
     }
+
+    // Yellow lamp should blink on/off every two seconds
+    public function testYellowLampShouldBlinkOnOffEveryTwoSeconds():void {
+        assertEquals("Y", $this->berlinClock->getSeconds(0));
+       
+    }
+
 
 }
