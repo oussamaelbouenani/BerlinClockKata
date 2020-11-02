@@ -34,6 +34,18 @@ class BerlinClockKataTest extends TestCase
         $this->assertEquals("[Y][x][x][x]", $actual);
     }
 
+    public function test_2minute_shouldReturn_Yxxx(){
+        $actual = $this->transform("00:02:00");
+
+        $this->assertEquals("[Y][Y][x][x]", $actual);
+    }
+
+    public function test_3minute_shouldReturn_Yxxx(){
+        $actual = $this->transform("00:03:00");
+
+        $this->assertEquals("[Y][Y][Y][x]", $actual);
+    }
+
     public function test_4minutes_shouldReturn_YYYY(){
         $actual = $this->transform("00:04:00");
 
