@@ -25,11 +25,11 @@ class BerlinClockKata
         var_dump($string);
         var_dump($int);
 
-        if ($int % 5 == 0) return $string."\n"."[x][x][x][x]";
-        if ($int % 5 == 1) return $string."\n"."[Y][x][x][x]";
-        if ($int % 5 == 2) return $string."\n"."[Y][Y][x][x]";
-        if ($int % 5 == 3) return $string."\n"."[Y][Y][Y][x]";
-        if ($int % 5 == 4) return $string."\n"."[Y][Y][Y][Y]";
+        if ($int == 0) return $string."\n"."[x][x][x][x]";
+        if ($int == 1) return $string."\n"."[Y][x][x][x]";
+        if ($int == 2) return $string."\n"."[Y][Y][x][x]";
+        if ($int == 3) return $string."\n"."[Y][Y][Y][x]";
+        if ($int == 4) return $string."\n"."[Y][Y][Y][Y]";
     }
 
     public function countFiveMinutes(int $int):String{
