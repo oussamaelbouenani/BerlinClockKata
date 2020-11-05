@@ -68,47 +68,47 @@ class BerlinClockKataTest extends TestCase
     /**5minutesBlocs**/
 
     /**FiveminutesBlocs**/
-    public function testFiveMinutesShouldReturnOneLightYellowAndTenLightOff() {
+    public function test_5MinutesShouldReturn_Yxxxxxxxxxx() {
         $actual = $this->transform("00:05:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testTenMinutesShouldReturnTwoLightYellowAndNineLightOff() {
+    public function test_10MinutesShouldReturn_YYxxxxxxxxx() {
         $actual = $this->transform("00:10:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testFifteenMinutesShouldReturnTwoLightYellowAndOneLightRedAndEightLightOff() {
+    public function test_15MinutesShouldReturn_YYRxxxxxxxx() {
         $actual = $this->transform("00:15:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][x][x][x][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testTwentyMinutesShouldReturnThreeLightYellowAndOneLightRedAndSeventLightOff() {
+    public function test_20MinutesShouldReturn_YYRYxxxxxxx() {
         $actual = $this->transform("00:20:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][x][x][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testTwentyFiveMinutesShouldReturnFourLightYellowAndOneLightRedAndSixLightOff() {
+    public function test_25MinutesShouldReturn_YYRYYxxxxxx() {
         $actual = $this->transform("00:25:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][x][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testThirtyMinutesShouldReturnFourLightYellowAndTwoLightRedAndFiveLightOff() {
+    public function test_30MinutesShouldReturn_YYRYYRxxxxx() {
         $actual = $this->transform("00:30:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][x][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testThirtyFiveMinutesShouldReturnFiveLightYellowAndTwoLightRedAndFourLightOff() {
+    public function test_35MinutesShouldReturn_YYRYYRYxxxx() {
         $actual = $this->transform("00:35:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][Y][x][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testFourtyMinutesShouldReturnSixLightYellowAndTwoLightRedAndThreeLightOff() {
+    public function test_40MinutesShouldReturn_YYRYYRYYxxx() {
         $actual = $this->transform("00:40:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][Y][Y][x][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testFourtyFiveMinutesShouldReturnSixLightYellowAndThreeLightRedAndTwoLightOff() {
+    public function test_45MinutesShouldReturn_YYRYYRYYRxx() {
         $actual = $this->transform("00:45:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][Y][Y][R][x][x]\n[x][x][x][x]",$actual);
     }
-    public function testFiftyMinutesShouldReturnSevenLightYellowAndThreeLightRedAndOneLightOff() {
+    public function test_50MinutesShouldReturn_YYRYYRYYRYx() {
         $actual = $this->transform("00:50:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][Y][Y][R][Y][x]\n[x][x][x][x]",$actual);
     }
-    public function testFiftyFiveMinutesShouldReturnEightLightYellowAndThreeLightRed() {
+    public function test_55MinutesShouldReturn_YYRYYRYYRYY() {
         $actual = $this->transform("00:55:00");
         $this->assertEquals("[x][x][x][x]\n[x][x][x][x]\n[Y][Y][R][Y][Y][R][Y][Y][R][Y][Y]\n[x][x][x][x]",$actual);
     }
@@ -141,32 +141,31 @@ class BerlinClockKataTest extends TestCase
     }
     /**Top Hours every 5 hours should light one lamp **/
 
-    public function testSixHourShouldReturnOneLightRed(){
+    public function test_6HourShouldReturn_Rxxx(){
         $actual = $this->transform("06:00:00");
         $this->assertEquals("[R][x][x][x]\n[R][x][x][x]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
-    public function testEightHoursShouldReturnOneLightRed(){
+    public function test_8HoursShouldReturn_Rxxx(){
         $actual = $this->transform("08:00:00");
         $this->assertEquals("[R][x][x][x]\n[R][R][R][x]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
-    public function testTenHoursShouldReturnTwoLightRed(){
+    public function test_10HoursShouldReturnRRxx(){
         $actual = $this->transform("10:00:00");
         $this->assertEquals("[R][R][x][x]\n[x][x][x][x]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
-    public function testFifteenHoursShouldReturnThreeLightRed(){
+    public function test_15HoursShouldReturn_RRRx(){
         $actual = $this->transform("15:00:00");
         $this->assertEquals("[R][R][R][x]\n[x][x][x][x]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
-    public function testTwentyHoursShouldReturnFourLightRed(){
+    public function test_20HoursShouldReturn_RRRR(){
         $actual = $this->transform("20:00:00");
         $this->assertEquals("[R][R][R][R]\n[x][x][x][x]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
-    public function testTwentyFourHoursShouldReturnFourLightRed(){
+    public function test_24HoursShouldReturn_RRRR(){
         $actual = $this->transform("24:00:00");
         $this->assertEquals("[R][R][R][R]\n[R][R][R][R]\n[x][x][x][x][x][x][x][x][x][x][x]\n[x][x][x][x]", $actual);
     }
 
 
-
-
-}?>
+}
+?>
