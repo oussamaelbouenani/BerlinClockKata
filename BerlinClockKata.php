@@ -48,11 +48,27 @@ class BerlinClockKata
     }
 
     public function countHours(int $int):String{
-        if ($int % 5 == 0) return "[x][x][x][x]";
-        if ($int % 5 == 1) return "[R][x][x][x]";
-        if ($int % 5 == 2) return "[R][R][x][x]";
-        if ($int % 5 == 3) return "[R][R][R][x]";
-        if ($int % 5 == 4) return "[R][R][R][R]";
+
+        $string = $this->countTopHours($int/5);
+        $int=$int%5;
+
+        var_dump($string);
+        var_dump($int);
+
+        if ($int % 5 == 0) return $string."\n"."[x][x][x][x]";
+        if ($int % 5 == 1) return $string."\n"."[R][x][x][x]";
+        if ($int % 5 == 2) return $string."\n"."[R][R][x][x]";
+        if ($int % 5 == 3) return $string."\n"."[R][R][R][x]";
+        if ($int % 5 == 4) return $string."\n"."[R][R][R][R]";
+    }
+    public function countTopHours(int $int):String{
+
+        if ($int  == 0) return "[x][x][x][x]";
+        if ($int  == 1) return "[R][x][x][x]";
+        if ($int  == 2) return "[R][R][x][x]";
+        if ($int  == 3) return "[R][R][R][x]";
+        if ($int  == 4) return "[R][R][R][R]";
     }
 
 }
+?>
