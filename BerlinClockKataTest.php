@@ -198,5 +198,18 @@ class BerlinClockKataTest extends TestCase
             $actual);
     }
 
+     /**Show whole clock with a correct seconds minutes and hours**/
+ 
+    public function test_Show_whole_clock_with_a_correct_seconds_minutes_and_hours() : void {
+        $berlinTime [] = $this->berlinClock->convertToBerlinTime("23:51:20");
+        $expecte [] = "[R]" . "\n" . "[R][R][R][R]" . "\n" . "[R][R][R][x]" . "\n" . "[Y][Y][R][Y][Y][R][Y][Y][R][Y][x]" . "\n" . "[Y][x][x][x]";
+
+        $this->assertEquals(count($expecte), count($berlinTime));
+        for ($i = 0; $i < count($expecte); $i++) {
+            $this->assertEquals($expecte[$i], $berlinTime[$i]);
+        }
+
+    }
+
 }
 ?>
