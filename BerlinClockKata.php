@@ -22,9 +22,6 @@ class BerlinClockKata
         $string = $this->countFiveMinutes($int/5);
         $int=$int%5;
 
-        var_dump($string);
-        var_dump($int);
-
         if ($int == 0) return $string."\n"."[x][x][x][x]";
         if ($int == 1) return $string."\n"."[Y][x][x][x]";
         if ($int == 2) return $string."\n"."[Y][Y][x][x]";
@@ -51,9 +48,6 @@ class BerlinClockKata
 
         $string = $this->countTopHours($int/5);
         $int=$int%5;
-
-        var_dump($string);
-        var_dump($int);
 
         if ($int % 5 == 0) return $string."\n"."[x][x][x][x]";
         if ($int % 5 == 1) return $string."\n"."[R][x][x][x]";
