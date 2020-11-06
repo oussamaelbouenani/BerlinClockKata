@@ -14,7 +14,7 @@ class BerlinClockKata
 
         var_dump("Recu -> ".$time);
 
-        return $this->countHours($hour)."\n".$this->countMinutes($min);
+        return $this->countSeconds($sec)."\n".$this->countHours($hour)."\n".$this->countMinutes($min);
     }
 
     public function countMinutes(int $int):String{
@@ -68,6 +68,11 @@ class BerlinClockKata
         if ($int  == 2) return "[R][R][x][x]";
         if ($int  == 3) return "[R][R][R][x]";
         if ($int  == 4) return "[R][R][R][R]";
+    }
+
+    public  function countSeconds(int $int): String  {
+        if ($int % 2 == 0) return "[R]";
+        return "[x]";
     }
 
 }
